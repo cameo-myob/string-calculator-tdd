@@ -35,4 +35,14 @@ class CalculatorTest {
         assertEquals(sumFourFive, Calculator.add("4,5"));
         assertEquals(sumTenEight, Calculator.add("10,8"));
     }
+
+//    Fourth test - method takes any amount of numbers in string and returns the sum
+    @Test
+    public void returnsSumAll(){
+        int sumFourFiveSix = 15;
+        int sumOneTwoThreeFour = 10;
+
+        assertEquals(sumFourFiveSix, Calculator.add("4,5,6"));
+        assertEquals(sumOneTwoThreeFour, Calculator.add("1,2,3,4"));
+    }
 }
