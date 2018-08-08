@@ -6,7 +6,7 @@ public class Calculator {
         if(values[0].contains("//"))
         {
             String[] delimiter = values[0].split("//|\\n");
-            values = values[1].split("["+ delimiter[1] + "]");
+            values = values[1].split("(["+ delimiter[1] + "])+");
         }
 
         int sum = 0;

@@ -83,4 +83,14 @@ class CalculatorTest {
         assertEquals(two, Calculator.add("1000,2,13483"));
         assertEquals(sumFiveSix, Calculator.add("5,6,1059832"));
     }
+
+//    Ninth test - delimiters can be of any length
+    @Test
+    void anyLengthDelimiter(){
+        int sumFourFiveSix = 15;
+        int sumTwoThree = 5;
+
+        assertEquals(sumFourFiveSix, Calculator.add("//***\n4***5***6"));
+        assertEquals(sumTwoThree, Calculator.add("//---\n2---3"));
+    }
 }
