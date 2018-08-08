@@ -65,4 +65,12 @@ class CalculatorTest {
         assertEquals(sumFourFiveSix, Calculator.add("//;\n4;5;6"));
         assertEquals(sumOneTwoThreeFour, Calculator.add("//?\n1?2?3?4"));
     }
+
+//    Seventh test - calling add with a negative number will throw an exception "Negatives not allowed" and the negative number that was passed
+    @Test
+    public void exceptionTesting(){
+        assertThrows(IllegalArgumentException.class, () -> {
+            Calculator.add("//;\n-4;5;6");
+        });
+    }
 }
