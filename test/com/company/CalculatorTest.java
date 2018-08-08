@@ -25,4 +25,14 @@ class CalculatorTest {
         assertEquals(test3, Calculator.add(Integer.toString(test3)));
         assertEquals(test10, Calculator.add(Integer.toString(test10)));
     }
+
+//    Third test - method takes two numbers in a string and returns the sum of the numbers
+    @Test
+    public void returnsSum(){
+        int sumFourFive = 9;
+        int sumTenEight = 18;
+
+        assertEquals(sumFourFive, Calculator.add("4,5"));
+        assertEquals(sumTenEight, Calculator.add("10,8"));
+    }
 }

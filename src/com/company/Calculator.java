@@ -1,7 +1,13 @@
 package com.company;
 
 public class Calculator {
-    public static int add(String s) {
-        return Integer.parseInt(s);
+    public static int add(String input) {
+        String[] values = input.split(",");
+        int sum = 0;
+        for (int i = 0; i < values.length; i++)
+        {
+            sum += Integer.parseInt(values[i]);
+        }
+        return sum;
     }
 }
