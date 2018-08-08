@@ -50,9 +50,19 @@ class CalculatorTest {
     @Test
     public void splitLinebreaksAndCommas(){
         int sumFourFiveSix = 15;
-        int sunOneTwoThreeFour = 10;
+        int sumOneTwoThreeFour = 10;
 
         assertEquals(sumFourFiveSix, Calculator.add("4,5\n6"));
-        assertEquals(sunOneTwoThreeFour, Calculator.add("1\n2,3\n4"));
+        assertEquals(sumOneTwoThreeFour, Calculator.add("1\n2,3\n4"));
+    }
+
+//    Sixth test - support different delimiters
+    @Test
+    public void supportDifferentDelimiters(){
+        int sumFourFiveSix = 15;
+        int sumOneTwoThreeFour = 10;
+
+        assertEquals(sumFourFiveSix, Calculator.add("//;\n4;5;6"));
+        assertEquals(sumOneTwoThreeFour, Calculator.add("//?\n1?2?3?4"));
     }
 }
