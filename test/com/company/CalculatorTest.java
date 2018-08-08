@@ -9,14 +9,14 @@ class CalculatorTest {
 
 //    First test - method takes string and returns number
     @Test
-    public void returnsNumber(){
+    void returnsNumber(){
         int test = 0;
         assertEquals(test, Calculator.add("0"));
     }
 
 //    Second test - method takes string value and returns int value
     @Test
-    public void returnsIntValue(){
+    void returnsIntValue(){
         int test2 = 2;
         int test3 = 3;
         int test10 = 10;
@@ -28,7 +28,7 @@ class CalculatorTest {
 
 //    Third test - method takes two numbers in a string and returns the sum of the numbers
     @Test
-    public void returnsSum(){
+    void returnsSum(){
         int sumFourFive = 9;
         int sumTenEight = 18;
 
@@ -38,7 +38,7 @@ class CalculatorTest {
 
 //    Fourth test - method takes any amount of numbers in string and returns the sum
     @Test
-    public void returnsSumOfAll(){
+    void returnsSumOfAll(){
         int sumFourFiveSix = 15;
         int sumOneTwoThreeFour = 10;
 
@@ -48,7 +48,7 @@ class CalculatorTest {
 
 //    Fifth test - new line breaks and commas should be interchangeable between numbers
     @Test
-    public void splitLinebreaksAndCommas(){
+    void splitLinebreaksAndCommas(){
         int sumFourFiveSix = 15;
         int sumOneTwoThreeFour = 10;
 
@@ -58,7 +58,7 @@ class CalculatorTest {
 
 //    Sixth test - support different delimiters
     @Test
-    public void supportDifferentDelimiters(){
+    void supportDifferentDelimiters(){
         int sumFourFiveSix = 15;
         int sumOneTwoThreeFour = 10;
 
@@ -68,9 +68,19 @@ class CalculatorTest {
 
 //    Seventh test - calling add with a negative number will throw an exception "Negatives not allowed" and the negative number that was passed
     @Test
-    public void exceptionTesting(){
+    void exceptionTesting(){
         assertThrows(IllegalArgumentException.class, () -> {
             Calculator.add("//;\n-4;5;6");
         });
+    }
+
+//    Eighth test - numbers greater than or equal to 1000 should be ignored
+    @Test
+    void ignore1000(){
+        int two = 2;
+        int sumFiveSix = 11;
+
+        assertEquals(two, Calculator.add("1000,2,13483"));
+        assertEquals(sumFiveSix, Calculator.add("5,6,1059832"));
     }
 }

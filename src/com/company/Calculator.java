@@ -15,7 +15,10 @@ public class Calculator {
             {
                 throw new IllegalArgumentException("Negatives not allowed: " + values[i]);
             }
-            else
+            else if (Integer.parseInt(values[i]) >= 1000)
+            {
+                continue;
+            } else
             sum += Integer.parseInt(values[i]);
         return sum;
     }
