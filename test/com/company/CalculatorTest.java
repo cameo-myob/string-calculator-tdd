@@ -38,11 +38,21 @@ class CalculatorTest {
 
 //    Fourth test - method takes any amount of numbers in string and returns the sum
     @Test
-    public void returnsSumAll(){
+    public void returnsSumOfAll(){
         int sumFourFiveSix = 15;
         int sumOneTwoThreeFour = 10;
 
         assertEquals(sumFourFiveSix, Calculator.add("4,5,6"));
         assertEquals(sumOneTwoThreeFour, Calculator.add("1,2,3,4"));
+    }
+
+//    Fifth test - new line breaks and commas should be interchangeable between numbers
+    @Test
+    public void splitLinebreaksAndCommas(){
+        int sumFourFiveSix = 15;
+        int sunOneTwoThreeFour = 10;
+
+        assertEquals(sumFourFiveSix, Calculator.add("4,5\n6"));
+        assertEquals(sunOneTwoThreeFour, Calculator.add("1\n2,3\n4"));
     }
 }
