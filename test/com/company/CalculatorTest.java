@@ -93,4 +93,14 @@ class CalculatorTest {
         assertEquals(sumFourFiveSix, Calculator.add("//***\n4***5***6"));
         assertEquals(sumTwoThree, Calculator.add("//---\n2---3"));
     }
+
+//    Tenth test - allow multiple delimiters ("//[*][%]\n1*2%3")
+    @Test
+    void multipleDelimiters(){
+        int sumFourFiveSix = 15;
+        int sumTwoThreeFour = 9;
+
+        assertEquals(sumFourFiveSix, Calculator.add("//[*][^]\n4*5^6"));
+        assertEquals(sumTwoThreeFour, Calculator.add("//[-][#]\n2-3#4"));
+    }
 }
