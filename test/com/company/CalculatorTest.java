@@ -103,4 +103,14 @@ class CalculatorTest {
         assertEquals(sumFourFiveSix, Calculator.add("//[*][^]\n4*5^6"));
         assertEquals(sumTwoThreeFour, Calculator.add("//[-][#]\n2-3#4"));
     }
+
+//    Eleventh test - handle multiple delimiters with a length longer than one character
+    @Test
+    void multipleLongDelimiters(){
+        int sumFourFiveSix = 15;
+        int sumTwoThreeFour = 9;
+
+        assertEquals(sumFourFiveSix, Calculator.add("//[**][^^^]\n4**5^^^6"));
+        assertEquals(sumTwoThreeFour, Calculator.add("//[---][######]\n2---3######4"));
+    }
 }
