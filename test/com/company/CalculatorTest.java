@@ -113,4 +113,14 @@ class CalculatorTest {
         assertEquals(sumFourFiveSix, Calculator.add("//[**][^^^]\n4**5^^^6"));
         assertEquals(sumTwoThreeFour, Calculator.add("//[---][######]\n2---3######4"));
     }
+
+//    Twelfth test - handle delimiters that have numbers as a part of them, where the number cannot be on the edge of a delimiter
+    @Test
+    void delimitersWithNumbers(){
+        int sumSixFiveNine = 20;
+        int sumTwoThreeFour = 9;
+
+        assertEquals(sumSixFiveNine, Calculator.add("//[*1*][^4^]\n6*1*5^4^9"));
+        assertEquals(sumTwoThreeFour, Calculator.add("//[-67-][##8###]\n2-67-3##8###4"));
+    }
 }
